@@ -16,10 +16,10 @@ function leave() {
 /*
  * Prepare websocket for signaling server endpoint.
  */
-//var live="ws://" + window.location.host + "/signal"
+var live="ws://" + window.location.host + "/signal"
 var local="ws://http://localhost:8080/signal"
 var loc = new WebSocket('ws://localhost:8080/signal');
-var signalingWebsocket =  new WebSocket('ws://localhost:8080/signal');
+var signalingWebsocket =  new WebSocket(live);
 
 signalingWebsocket.onmessage = function(msg) {
     console.log("Got message", msg.data);
